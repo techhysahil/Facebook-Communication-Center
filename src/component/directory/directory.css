@@ -1,0 +1,13 @@
+.directory{
+	margin: 10px 0px;
+	display: inline-block;
+	margin-right: 30px;
+	cursor: pointer;
+}
+.directory .directory-icon{
+	width: 45px;
+	height: 55px;
+}
+.directory .title{
+	font-size: 16px;
+}
