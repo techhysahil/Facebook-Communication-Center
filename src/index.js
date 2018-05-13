@@ -7,8 +7,6 @@ import { Link, BrowserRouter as Router, Route } from "react-router-dom";
 
 import { directory } from './reducer/reducer';
 import DirectoryTree from './container/DirectoryContainer';
-// import AddDirectory from './container/AddDirectory';
-// import BreadCrumb from './container/BreadCrumb';
 
 
 const rootReducer = combineReducers({directory});
@@ -17,9 +15,6 @@ const store = createStore(
   rootReducer,
   applyMiddleware()
 )
-window.store = store;
-
-console.log(store.getState())
 
 ReactDOM.render(
 	<Provider store={store}>
@@ -27,7 +22,15 @@ ReactDOM.render(
 		<Router>
 		    <div>
 		      <Route exact path="/" component={DirectoryTree} />
-		      <Route path="/:paramId" component={DirectoryTree} />
+		      <Route
+			    children={({ location }) => {
+			      let params = location.pathname.split("/");
+			      let first = params[1];
+			      let rest = params.slice(2);
+			      let path = `/:${first}${rest.map(x => `/:${x}?`).join("")}`;
+			      return <Route path={path} component={DirectoryTree} />;
+			    }}
+			  />
 		    </div>
 		  </Router>
 		</div>

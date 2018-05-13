@@ -10,4 +10,7 @@
 }
 .directory .title{
 	font-size: 16px;
+    max-width: 70px;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }

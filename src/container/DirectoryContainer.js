@@ -2,14 +2,19 @@ import { connect } from 'react-redux';
 
 // import {increment, decrement} from '../action/action';
 import DirectoryTree from '../component/directory';
+import { updatecurrentDirectory, updatecurrentDirectoryNode } from '../action/action';
+
 
 const mapStateToProps = (state) => ({
-  directoryData: state.directory
+  rootDirData: state.directory["currentDirectoryNode"],
+  directoryMapping :state.directory.DirectoryMap,
+  openModal : state.directory.openModal,
+  newDirectoryName : state.directory.newDirectoryName
 })
 
 const mapDispatchToProps = (dispatch) => ({
-  // increment: () => dispatch(increment()),
-  // decrement: () => dispatch(decrement())
+  updateCurrentDirectory: (directory) => dispatch(updatecurrentDirectory(directory)),
+  currentDirectoryNode: (nodes) => dispatch(updatecurrentDirectoryNode(nodes))
 })
 
 export default connect(

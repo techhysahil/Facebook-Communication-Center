@@ -5,15 +5,18 @@ const  divStyle = {
   display: 'inline-block',
   marginRight: '20px'
 };
-
-const linkArr = ['/']
-const breadCrumb = ({match}) => {
+const breadCrumb = ({data}) => {
 	return(
-		linkArr.map((item,index) => {
+		data.map((item,index) => {
 			return <div key={index} style={divStyle} className="item">{item}</div>
 		})
 	)
 }
+
+const mapStateToProps = (state,props) => ({
+  match: props.match,
+  data :props.data
+})
 
 const mapDispatchToProps = (dispatch) => ({
     // addDirectory: () => dispatch(addDirectory())
