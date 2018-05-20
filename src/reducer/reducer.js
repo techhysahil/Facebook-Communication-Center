@@ -1,70 +1,85 @@
-// let initDirState = {
-// 		DirectoryMap :{
-// 			root :{
-// 				name : "root",
-// 				nested : ["Project_1"]
-// 			},
-// 			Project_1 : {
-// 				name : "Project_1",
-// 				nested : ["Project_2","Project_3"]
-// 			},
-// 			Project_2 : {
-// 				name : "Project_2",
-// 				nested : ["Project_21","Project_22","Project_23"]
-// 			},
-// 			Project_21 : {
-// 				name : "Project_21",
-// 				nested : null
-// 			},
-// 			Project_22 : {
-// 				name : "Project_22",
-// 				nested : null
-// 			},
-// 			Project_23 : {
-// 				name : "Project_23",
-// 				nested : null
-// 			},
-// 			Project_3 : {
-// 				name : "Project_3",
-// 				nested : ["Project_31"]
-// 			},
-// 			Project_31 : {
-// 				name : "Project_31",
-// 				nested : null
-// 			}	
-// 		},
-// 		currentDirectoryNode : ["Project_1"],
-// 		currentDirectory : 'root'
-// 	}
-
-let initDirState = {
-		DirectoryMap :{
-			root :{
-				name : "root",
-				nested : null
-			}	
-		},
-		currentDirectoryNode : null,
-		currentDirectory : 'root'
+let initUserState = [
+	{
+		userId : 15656,
+		name : "Sahil Gupta",
+		email : "sahil@gmail.com",
+		thumnailUrl : "https://res.cloudinary.com/demo/image/upload/w_400,h_400,c_crop,g_face,r_max/w_200/lady.jpg",
+		postIdList : [5997787]
 	}
+];
 
-export function directory(state=initDirState,action){
-	switch(action.type){
-		case "ALL":
+export function user(state = initUserState, action) {
+	switch (action.type) {
+		default:
 			return state;
-		case "ADD_DIRECTORY":
-			let clone = JSON.parse(JSON.stringify(state));
-			clone.currentDirectoryNode = clone.currentDirectoryNode ? clone.currentDirectoryNode.concat(action.name) : [action.name];
-			clone.DirectoryMap[state.currentDirectory].nested = clone.DirectoryMap[state.currentDirectory].nested ? clone.DirectoryMap[state.currentDirectory].nested.concat(action.name) : [action.name]
-			clone.DirectoryMap[action.name] = {
-				name : action.name,
-				nested : null
-			}
-			return clone;
-		case "UPDATE_CURRENT_DIRECTORY":
-			return {...state,currentDirectory : action.name}
-		case "UPDATE_CURRENT_DIRECTORY_NODE":
-			return {...state,currentDirectoryNode : action.name}
+	}
+}
+
+let initCommentState = {
+	5656567 : {	
+		commentId : 565656,
+		text : "The is the dummy timeline text",
+		userId : 15656,
+		likes : 10,
+		repliesId : []
+	},
+	5667856 : {	
+		commentId : 5667856,
+		text : "The is the 2nd dummy timeline text",
+		userId : 15656,
+		likes : 1,
+		repliesId : [12367856,2322856]
+	},
+	12367856 : {	
+		commentId : 5667856,
+		text : "The is the 2nd dummy timeline text",
+		userId : 15656,
+		likes : 1,
+		repliesId : []
+	},
+	2322856 : {	
+		commentId : 5667856,
+		text : "The is the 2nd dummy timeline text",
+		userId : 15656,
+		likes : 1,
+		repliesId : []
+	}
+};
+export function comments(state = initCommentState, action) {
+	switch (action.type) {
+		default:
+			return state;
+	}
+}
+
+let initCommentTimeLineState = {
+	8976767 : {	
+		commentTimeLineId : 8976767,
+		commentsIdList : [5656567,5667856]
+	}
+};
+
+export function commentsTimeline(state = initCommentTimeLineState, action) {
+	switch (action.type) {
+		default:
+			return state;
+	}
+}
+
+
+let postInitState = [
+	{	
+		postId : 5997787,
+		userId : 15656,
+		text : "this is user dummy posted content",
+		time : "Sat May 19 2018 17:52:26",
+		commentTimelineId : 8976767,
+		likes : 12,
+		commentsCount : 23
+	}
+];
+export function postList(state = postInitState, action) {
+	switch (action.type) {
 		default:
 			return state;
 	}

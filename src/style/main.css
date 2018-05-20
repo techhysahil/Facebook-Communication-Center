@@ -1,0 +1,34 @@
+/*style Reset*/
+html,
+body {
+	margin: 0px;
+	padding: 0px;
+}
+
+/*Common style*/
+.btn {
+	border: 1px solid #ccc;
+	padding: 8px 12px;
+	display: inline-block;
+	cursor: pointer;
+	verticalalign: top;
+	marginleft: 10px;
+}
+input {
+	height: 32px;
+	padding: 0px 10px;
+	font-size: 16px;
+	color: #666;
+}
+textarea{
+
+}
+textarea:focus{
+	outline: 0px;
+}
+input:focus {
+	outline: 0px;
+}
+
+/*Module style*/
+

@@ -1,0 +1,23 @@
+.user-profile-info{
+	display: block;
+	overflow: hidden;
+	margin-bottom: 40px;
+}
+.user-profile-info .thumbnail{
+	width: 100px;
+	height: 100px;
+	display: inline-block;
+	float: left;
+}
+.user-profile-info .user-info{
+	margin-left: 15px;
+	display: inline-block;
+	margin-top: 40px;
+	font-size: 18px;
+}
+.user-profile-info .user-info .user-name{
+	font-weight: bold;
+}
+.user-profile-info .user-info .post-time{
+	font-weight: 300;
+}

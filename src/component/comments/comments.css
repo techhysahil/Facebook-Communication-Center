@@ -1,0 +1,31 @@
+.comments-wrapper{
+	    margin-top: 20px;
+}
+.comment-thread{
+	display: block;
+    overflow: hidden;
+    padding: 15px 0px;
+}
+.comment-data{
+	float: left;
+    margin-left: 12px;
+}
+.comment-data .user-name{
+	font-weight: 600;
+    margin-right: 10px;
+}
+.comment-stat{
+	margin-top: 15px;
+	font-size: 14px;
+}
+.comment-stat .entity-name{
+	margin-right: 4px;
+}
+.comment-stat .comment{
+	margin-left: 10px;
+}
+
+.repliess-thread{
+	clear: both;
+	margin-left: 50px;
+}
